@@ -8,6 +8,10 @@ import { PhotoGalleryDetailsComponent } from './components/gallery/photo-gallery
 import { FavoritePhotosComponent } from './components/gallery/favorite-photos/favorite-photos.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,17 @@ import { LoadingComponent } from './shared/loading/loading.component';
     PhotoGalleryDetailsComponent,
     FavoritePhotosComponent,
     HeaderComponent,
-    LoadingComponent
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
