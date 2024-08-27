@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   FAVORITES_PHOTOS_ROUTE,
   PHOTO_GALLERY_ROUTE,
-} from 'src/app/constants/photo-gallery.constant';
+} from '../gallery/constants/photo-gallery.constant';
 
 @Component({
   selector: 'app-header',

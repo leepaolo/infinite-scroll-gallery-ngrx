@@ -1,9 +1,19 @@
 <div class="button-container">
-  <button mat-fab extended [routerLink]="PHOTO_GALLERY_ROUTE">
+  <a
+    mat-fab
+    extended
+    [routerLink]="PHOTO_GALLERY_ROUTE"
+    routerLinkActive="active-view"
+  >
     Photo gallery
-  </button>
-  <button mat-fab extended [routerLink]="FAVORITES_PHOTOS_ROUTE">
+  </a>
+  <a
+    mat-fab
+    extended
+    [routerLink]="FAVORITES_PHOTOS_ROUTE"
+    routerLinkActive="active-view"
+  >
     <mat-icon>favorite</mat-icon>
     Favorites
-  </button>
+  </a>
 </div>
