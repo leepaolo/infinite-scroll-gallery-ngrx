@@ -10,9 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GalleryModule } from './components/gallery/gallery.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderButtonsDirective } from './shared/directives/header-buttons.directive';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, HeaderButtonsDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,

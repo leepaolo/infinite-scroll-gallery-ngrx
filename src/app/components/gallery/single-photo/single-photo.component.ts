@@ -1,10 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IGallery } from 'src/app/models/gallery.interface';
+import { FavoritesService } from '../service/favorites.service';
 
 @Component({
   selector: 'app-single-photo',
   templateUrl: './single-photo.component.html',
-  styleUrls: ['./single-photo.component.scss']
+  styleUrls: ['./single-photo.component.scss'],
 })
-export class SinglePhotoComponent {
+export class SinglePhotoComponent implements OnInit {
+  photo: IGallery | undefined;
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private favoritesService: FavoritesService
+  ) {}
+
+  ngOnInit(): void {
+    const photoId = this.route.snapshot.paramMap.get('id');
+    if (photoId) {
+      this.favoritesService.getFavorites().subscribe((favorites) => {
+        this.photo = favorites.find((fav) => fav.id === photoId);
+      });
+    }
+  }
+
+  removeFromFavorites(): void {
+    if (this.photo) {
+      this.favoritesService.deleteFromFavorites(this.photo);
+      this.router.navigate(['/favorites']);
+    }
+  }
 }

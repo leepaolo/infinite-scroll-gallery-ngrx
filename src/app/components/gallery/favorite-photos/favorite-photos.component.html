@@ -1,1 +1,11 @@
-<p>favorite-photos works!</p>
+<div class="grid-container">
+  <mat-grid-list cols="3" rowHeight="2:3">
+    <mat-grid-tile
+      *ngFor="let item of favoritePhotos"
+      (click)="openPhoto(item)"
+    >
+      <!-- EDIT: Visualizzazione dei preferiti -->
+      <img [src]="item.photo" [alt]="'Favorite Photo ' + item.id" />
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

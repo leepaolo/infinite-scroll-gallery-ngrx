@@ -1,0 +1,18 @@
+.single-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-photo-container img {
+  width: 20%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.single-photo-container button {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}

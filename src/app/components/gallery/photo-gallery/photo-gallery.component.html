@@ -11,7 +11,7 @@
 
 <div class="grid-container">
   <mat-grid-list cols="3" rowHeight="2:3">
-    <mat-grid-tile *ngFor="let item of gallery">
+    <mat-grid-tile *ngFor="let item of gallery" (click)="addToFavorites(item)">
       <img [src]="item.photo" [alt]="'Photo ' + item.id" />
     </mat-grid-tile>
   </mat-grid-list>

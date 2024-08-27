@@ -5,16 +5,10 @@
   align-items: center;
   padding: 3rem;
   background-color: rgb(228, 237, 255);
+  margin-bottom: 1rem;
 
-  button[mat-fab],
   a[mat-fab] {
     margin: 0 8px;
     border-radius: 0.5rem;
-    background-color: #4c99eb;
   }
-}
-
-.active-view {
-  background-color: #0056b3 !important;
-  color: #ffffff !important;
 }

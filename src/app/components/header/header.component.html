@@ -3,7 +3,10 @@
     mat-fab
     extended
     [routerLink]="PHOTO_GALLERY_ROUTE"
-    routerLinkActive="active-view"
+    [appHeaderButtons]="{
+      activeStyle: activeGalleryStyle,
+      inactiveStyle: galleryGradient
+    }"
   >
     Photo gallery
   </a>
@@ -11,7 +14,10 @@
     mat-fab
     extended
     [routerLink]="FAVORITES_PHOTOS_ROUTE"
-    routerLinkActive="active-view"
+    [appHeaderButtons]="{
+      activeStyle: activeFavoriteStyle,
+      inactiveStyle: favoriteGradient
+    }"
   >
     <mat-icon>favorite</mat-icon>
     Favorites

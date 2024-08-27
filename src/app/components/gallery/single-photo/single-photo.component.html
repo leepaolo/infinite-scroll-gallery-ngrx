@@ -1,1 +1,7 @@
-<p>single-photo works!</p>
+<div class="single-photo-container" *ngIf="photo">
+  <img [src]="photo.photo" [alt]="'Photo ' + photo.id" />
+
+  <button mat-stroked-button (click)="removeFromFavorites()">
+    Remove from favorites
+  </button>
+</div>
