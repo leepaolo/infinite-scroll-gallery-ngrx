@@ -1,1 +1,18 @@
-<p>photo-gallery works!</p>
+<app-loading
+  *ngIf="isLoading"
+  style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  "
+></app-loading>
+
+<div class="grid-container">
+  <mat-grid-list cols="3" rowHeight="2:3">
+    <mat-grid-tile *ngFor="let item of gallery">
+      <img [src]="item.photo" [alt]="'Photo ' + item.id" />
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,33 @@
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+mat-grid-list {
+  width: 100%;
+  height: auto;
+}
+
+mat-grid-tile {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+.loading-spinner {
+  position: fixed;
+
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
