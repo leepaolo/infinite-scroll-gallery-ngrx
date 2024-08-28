@@ -15,7 +15,9 @@ export class FavoritesService {
 
   // Get favorites as Observable
   getFavorites(): Observable<IGallery[]> {
-    return this.favoritesSubject.asObservable();
+    const favorites = this.favoritesSubject.asObservable();
+    console.log('Emitting favorites:', favorites); // Aggiungi questo log
+    return favorites;
   }
 
   // Add photo to favorites / save to local storage

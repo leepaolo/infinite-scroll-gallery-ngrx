@@ -32,3 +32,34 @@ mat-grid-tile {
   justify-content: center;
   align-items: center;
 }
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.favorite-empty {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+}
+
+.cta-title {
+  font-size: 1.5rem;
+  color: #9f9f9f;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+
+  &:hover {
+    color: #60a5fa;
+  }
+}

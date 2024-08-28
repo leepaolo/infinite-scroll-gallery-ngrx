@@ -1,11 +1,19 @@
-<div class="grid-container">
-  <mat-grid-list cols="3" rowHeight="2:3">
-    <mat-grid-tile
-      *ngFor="let item of favoritePhotos"
-      (click)="openPhoto(item)"
-    >
-      <!-- EDIT: Visualizzazione dei preferiti -->
-      <img [src]="item.photo" [alt]="'Favorite Photo ' + item.id" />
-    </mat-grid-tile>
-  </mat-grid-list>
+<div *ngIf="favoritePhotos.length > 0; else emptyMessage">
+  <div class="grid-container">
+    <mat-grid-list cols="3" rowHeight="2:3">
+      <mat-grid-tile
+        *ngFor="let item of favoritePhotos"
+        (click)="openPhoto(item)"
+      >
+        <img [src]="item.photo" [alt]="'Favorite Photo ' + item.id" />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
+
+<ng-template #emptyMessage>
+  <div class="message-container">
+    <h1 class="favorite-empty">{{ emptyTitle }}</h1>
+    <h2 class="cta-title" (click)="navigateToGallery()">{{ ctaTitle }}</h2>
+  </div>
+</ng-template>

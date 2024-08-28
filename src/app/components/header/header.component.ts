@@ -4,6 +4,7 @@ import {
   FAVORITES_PHOTOS_ROUTE,
   PHOTO_GALLERY_ROUTE,
 } from '../gallery/constants/photo-gallery.constant';
+import { FavoritesService } from '../gallery/service/favorites.service';
 
 @Component({
   selector: 'app-header',
@@ -36,4 +37,14 @@ export class HeaderComponent {
     background: '#db2777',
     color: '#ffffff',
   };
+
+  isFavoritesEmpty: boolean = true; // Default to true
+
+  constructor(private favoritesService: FavoritesService) {}
+
+  ngOnInit(): void {
+    this.favoritesService.getFavorites().subscribe((favorites) => {
+      this.isFavoritesEmpty = favorites.length === 0;
+    });
+  }
 }

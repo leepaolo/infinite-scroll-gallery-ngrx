@@ -22,6 +22,8 @@ export class SinglePhotoComponent implements OnInit {
     color: '#ffffff',
   };
 
+  isFavoritesEmpty: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -40,7 +42,17 @@ export class SinglePhotoComponent implements OnInit {
   removeFromFavorites(): void {
     if (this.photo) {
       this.favoritesService.deleteFromFavorites(this.photo);
-      this.router.navigate(['/favorites']);
+
+      // Dopo aver rimosso la foto, verifica se la lista dei preferiti è vuota
+      this.favoritesService.getFavorites().subscribe((favorites) => {
+        if (favorites.length === 0) {
+          // Se vuota, naviga alla pagina della galleria fotografica
+          this.router.navigate(['/photo-gallery']);
+        } else {
+          // Altrimenti, rimani nella pagina dei preferiti
+          this.router.navigate(['/favorites']);
+        }
+      });
     }
   }
 }

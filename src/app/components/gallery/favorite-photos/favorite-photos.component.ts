@@ -10,6 +10,8 @@ import { FavoritesService } from '../service/favorites.service';
 })
 export class FavoritePhotosComponent {
   favoritePhotos: IGallery[] = [];
+  emptyTitle = 'There are no favorite photos yet';
+  ctaTitle = 'Add your first favorite photo';
 
   constructor(
     private router: Router,
@@ -26,5 +28,9 @@ export class FavoritePhotosComponent {
   // Navigate to single photo view
   openPhoto(photo: IGallery): void {
     this.router.navigate(['/photos', photo.id]);
+  }
+
+  navigateToGallery(): void {
+    this.router.navigate(['/photo-gallery']);
   }
 }

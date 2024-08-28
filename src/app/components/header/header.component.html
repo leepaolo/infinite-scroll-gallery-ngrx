@@ -19,7 +19,7 @@
       inactiveStyle: favoriteGradient
     }"
   >
-    <mat-icon>favorite</mat-icon>
+    <mat-icon *ngIf="!isFavoritesEmpty">favorite</mat-icon>
     {{ favoriteTitle | uppercase }}
   </a>
 </div>
