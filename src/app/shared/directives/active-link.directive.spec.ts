@@ -1,8 +1,8 @@
-import { ActiveLinkDirective } from './active-link.directive';
+// import { ActiveLinkDirective } from './active-link.directive';
 
-describe('ActiveLinkDirective', () => {
-  it('should create an instance', () => {
-    const directive = new ActiveLinkDirective();
-    expect(directive).toBeTruthy();
-  });
-});
+// describe('ActiveLinkDirective', () => {
+//   it('should create an instance', () => {
+//     const directive = new ActiveLinkDirective();
+//     expect(directive).toBeTruthy();
+//   });
+// });

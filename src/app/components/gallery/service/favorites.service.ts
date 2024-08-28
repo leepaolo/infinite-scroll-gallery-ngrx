@@ -48,6 +48,8 @@ export class FavoritesService {
     const savedFavorites = localStorage.getItem('favorites');
     if (savedFavorites) {
       this.favoritesSubject.next(JSON.parse(savedFavorites));
+    } else {
+      this.favoritesSubject.next([]);
     }
   }
 }

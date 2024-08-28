@@ -60,7 +60,7 @@ export class PhotoGalleryComponent implements OnInit {
     this.loadImages(3);
   }
 
-  private generateRandomId(): string {
+  generateRandomId(): string {
     return Math.random().toString(36).substr(2, 9);
   }
 }
