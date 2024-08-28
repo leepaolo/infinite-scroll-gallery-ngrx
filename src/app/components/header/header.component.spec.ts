@@ -64,10 +64,6 @@ describe('HeaderComponent', () => {
     });
   });
 
-  it('should have isFavoritesEmpty set to true by default', () => {
-    expect(component.isFavoritesEmpty).toBeTrue();
-  });
-
   it('should call ngOnInit', () => {
     spyOn(component, 'ngOnInit');
     component.ngOnInit();

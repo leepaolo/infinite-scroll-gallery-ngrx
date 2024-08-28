@@ -57,7 +57,7 @@ describe('PhotoGalleryComponent', () => {
     const emptyTitleElement =
       fixture.nativeElement.querySelector('.empty-title');
     expect(emptyTitleElement).toBeTruthy();
-    expect(emptyTitleElement.textContent).toContain('No favorite photos');
+    expect(emptyTitleElement.textContent).toContain('Loading images....');
   });
 
   it('should display images when gallery is populated', () => {

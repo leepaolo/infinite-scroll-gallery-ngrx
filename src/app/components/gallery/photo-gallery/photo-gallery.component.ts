@@ -11,6 +11,7 @@ import { FavoritesService } from '../service/favorites.service';
 export class PhotoGalleryComponent implements OnInit {
   gallery: IGallery[] = [];
   isLoading: boolean = false;
+  loadingTitle: string = 'Loading images....';
 
   constructor(
     private galleryService: GalleryService,
