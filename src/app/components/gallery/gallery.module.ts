@@ -29,6 +29,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatProgressSpinnerModule,
     SharedModule,
   ],
-  exports: [RouterModule],
+  exports: [RouterModule, PhotoGalleryComponent],
 })
 export class GalleryModule {}
