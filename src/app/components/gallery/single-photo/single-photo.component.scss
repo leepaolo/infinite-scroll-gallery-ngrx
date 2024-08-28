@@ -12,7 +12,17 @@
   margin-bottom: 1rem;
 }
 
-.single-photo-container button {
-  margin-top: 1rem;
-  border-radius: 0.5rem;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  margin-bottom: 1rem;
+
+  a[mat-fab] {
+    margin: 0 8px;
+    border-radius: 0.5rem;
+  }
 }

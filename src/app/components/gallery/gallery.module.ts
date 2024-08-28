@@ -11,6 +11,7 @@ import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 
 import { LoadingComponent } from 'src/app/shared/loading/loading.component';
 import { FavoritePhotosComponent } from './favorite-photos/favorite-photos.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FavoritePhotosComponent } from './favorite-photos/favorite-photos.compo
     MatIconModule,
     MatGridListModule,
     MatProgressSpinnerModule,
+    SharedModule,
   ],
   exports: [RouterModule],
 })

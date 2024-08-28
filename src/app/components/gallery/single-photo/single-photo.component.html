@@ -1,7 +1,17 @@
 <div class="single-photo-container" *ngIf="photo">
   <img [src]="photo.photo" [alt]="'Photo ' + photo.id" />
 
-  <button mat-stroked-button (click)="removeFromFavorites()">
-    Remove from favorites
-  </button>
+  <div class="button-container">
+    <a
+      mat-fab
+      (click)="removeFromFavorites()"
+      extended
+      [appActiveLink]="{
+        activeStyle: activeGalleryStyle,
+        inactiveStyle: galleryGradient
+      }"
+    >
+      {{ removeFavoriteTitle | uppercase }}
+    </a>
+  </div>
 </div>

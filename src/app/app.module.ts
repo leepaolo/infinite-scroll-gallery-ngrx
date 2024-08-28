@@ -10,10 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GalleryModule } from './components/gallery/gallery.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderButtonsDirective } from './shared/directives/header-buttons.directive';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HeaderButtonsDirective],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +24,7 @@ import { HeaderButtonsDirective } from './shared/directives/header-buttons.direc
     MatIconModule,
     MatProgressSpinnerModule,
     GalleryModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

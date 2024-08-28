@@ -10,6 +10,17 @@ import { FavoritesService } from '../service/favorites.service';
 })
 export class SinglePhotoComponent implements OnInit {
   photo: IGallery | undefined;
+  removeFavoriteTitle = 'Remove from favorites';
+
+  galleryGradient = {
+    background: '#60a5fa',
+    color: '#ffffff',
+  };
+
+  activeGalleryStyle = {
+    background: '#2563eb',
+    color: '#ffffff',
+  };
 
   constructor(
     private route: ActivatedRoute,

@@ -3,23 +3,23 @@
     mat-fab
     extended
     [routerLink]="PHOTO_GALLERY_ROUTE"
-    [appHeaderButtons]="{
+    [appActiveLink]="{
       activeStyle: activeGalleryStyle,
       inactiveStyle: galleryGradient
     }"
   >
-    Photo gallery
+    {{ galleryTitle | uppercase }}
   </a>
   <a
     mat-fab
     extended
     [routerLink]="FAVORITES_PHOTOS_ROUTE"
-    [appHeaderButtons]="{
+    [appActiveLink]="{
       activeStyle: activeFavoriteStyle,
       inactiveStyle: favoriteGradient
     }"
   >
     <mat-icon>favorite</mat-icon>
-    Favorites
+    {{ favoriteTitle | uppercase }}
   </a>
 </div>

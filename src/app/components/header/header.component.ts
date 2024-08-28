@@ -14,6 +14,9 @@ export class HeaderComponent {
   PHOTO_GALLERY_ROUTE = PHOTO_GALLERY_ROUTE;
   FAVORITES_PHOTOS_ROUTE = FAVORITES_PHOTOS_ROUTE;
 
+  galleryTitle = 'Photo Gallery';
+  favoriteTitle = 'Favorite Photos';
+
   galleryGradient = {
     background: '#60a5fa',
     color: '#ffffff',
