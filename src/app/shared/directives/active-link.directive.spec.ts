@@ -29,8 +29,6 @@ describe('ActiveLinkDirective', () => {
     const d = fixture.debugElement.query(By.directive(ActiveLinkDirective));
     expect(d).toBeTruthy();
   });
-
-  // Add more tests here...
 });
 
 @Component({

@@ -1,13 +1,4 @@
-<app-loading
-  *ngIf="isLoading"
-  style="
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-  "
-></app-loading>
+<app-loading *ngIf="isLoading" class="loading-spinner"></app-loading>
 
 <div *ngIf="gallery.length === 0" class="empty-title">No favorite photos</div>
 

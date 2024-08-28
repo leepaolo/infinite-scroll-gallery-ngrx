@@ -38,7 +38,7 @@ export class HeaderComponent {
     color: '#ffffff',
   };
 
-  isFavoritesEmpty: boolean = true; // Default to true
+  isFavoritesEmpty: boolean = true;
 
   constructor(private favoritesService: FavoritesService) {}
 

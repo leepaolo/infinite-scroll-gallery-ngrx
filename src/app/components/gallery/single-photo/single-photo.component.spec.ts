@@ -76,6 +76,4 @@ describe('SinglePhotoComponent', () => {
     component.removeFromFavorites();
     expect(component.removeFromFavorites).toHaveBeenCalled();
   });
-
-  // Add more tests as needed
 });
