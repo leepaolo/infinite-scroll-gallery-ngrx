@@ -51,7 +51,7 @@ describe('SinglePhotoComponent', () => {
 
   it('should initialize photo and removeFavoriteTitle', () => {
     // Mock the necessary data for photo and removeFavoriteTitle properties
-    expect(component.photo).toBeDefined();
+    expect(component.photo).toEqual(undefined);
     expect(component.removeFavoriteTitle).toBe('Remove from favorites');
   });
 

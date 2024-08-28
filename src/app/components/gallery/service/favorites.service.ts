@@ -16,7 +16,7 @@ export class FavoritesService {
   // Get favorites as Observable
   getFavorites(): Observable<IGallery[]> {
     const favorites = this.favoritesSubject.asObservable();
-    console.log('Emitting favorites:', favorites); // Aggiungi questo log
+    // console.log('Emitting favorites:', favorites); // Aggiungi questo log
     return favorites;
   }
 

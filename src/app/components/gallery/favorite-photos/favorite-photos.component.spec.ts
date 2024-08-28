@@ -40,7 +40,7 @@ describe('FavoritePhotosComponent', () => {
 
   it('should display the empty title when there are no favorite photos', () => {
     const emptyTitleElement =
-      fixture.nativeElement.querySelector('.empty-title');
+      fixture.nativeElement.querySelector('.favorite-empty');
     expect(emptyTitleElement.textContent).toContain(component.emptyTitle);
   });
 
