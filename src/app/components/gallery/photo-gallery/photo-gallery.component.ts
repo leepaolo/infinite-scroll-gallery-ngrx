@@ -2,6 +2,14 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { IGallery } from '../../../models/gallery.interface';
 import { GalleryService } from '../service/gallery.service';
 import { FavoritesService } from '../service/favorites.service';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import {
+  selectGalleryState,
+  selectImage,
+  selectLoading,
+} from '../store/gallery.selectors';
+import * as GalleryActions from '../store/gallery.actions';
 
 @Component({
   selector: 'app-photo-gallery',
@@ -11,16 +19,26 @@ import { FavoritesService } from '../service/favorites.service';
 export class PhotoGalleryComponent implements OnInit {
   gallery: IGallery[] = [];
   isLoading: boolean = false;
+  isLoading$!: Observable<boolean>; // NgRx
   loadingTitle: string = 'Loading images....';
 
   constructor(
+    private store: Store,
     private galleryService: GalleryService,
     private favoritesService: FavoritesService
   ) {}
 
   ngOnInit(): void {
-    this.galleryService.getLoadingStatus().subscribe((loading) => {
-      this.isLoading = loading;
+    this.isLoading$ = this.store.select(selectLoading);
+
+    this.store.select(selectImage).subscribe((image: Blob | null) => {
+      if (image) {
+        this.gallery.push({
+          id: this.generateRandomId(),
+          photo: URL.createObjectURL(image),
+          isFavorite: false,
+        });
+      }
     });
     this.loadImages(12);
   }
@@ -28,22 +46,21 @@ export class PhotoGalleryComponent implements OnInit {
   // INFINITE SCROLL
   @HostListener('window:scroll', [])
   onScroll(): void {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    console.log('Scroll event detected'); // Debugging
+    const tolerance = 100; // Tolleranza di 100px prima del fondo
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - tolerance
+    ) {
+      console.log('Loading more images'); // Debugging
       this.loadMoreImages();
     }
   }
 
+  // Load images by dispatching the appropriate action
   loadImages(count: number): void {
     for (let i = 0; i < count; i++) {
-      this.galleryService.getRandomImage().subscribe((blob: Blob) => {
-        const objectURL = URL.createObjectURL(blob);
-        const image: IGallery = {
-          id: this.generateRandomId(),
-          photo: objectURL,
-          isFavorite: false,
-        };
-        this.gallery.push(image);
-      });
+      this.store.dispatch(GalleryActions.loadRandomImages());
     }
   }
 
@@ -56,7 +73,7 @@ export class PhotoGalleryComponent implements OnInit {
     }
   }
 
-  // LOAD 3 PHOTOS AT THE TIME
+  // LOAD 3 PHOTOS AT A TIME
   loadMoreImages(): void {
     this.loadImages(3);
   }

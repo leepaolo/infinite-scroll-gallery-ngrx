@@ -13,10 +13,9 @@ export class FavoritesService {
     this.loadFavoritesFromLocalStorage();
   }
 
-  // Get favorites as Observable
+  // Get favorites as Observable to subscribe to it
   getFavorites(): Observable<IGallery[]> {
     const favorites = this.favoritesSubject.asObservable();
-    // console.log('Emitting favorites:', favorites); // Aggiungi questo log
     return favorites;
   }
 
